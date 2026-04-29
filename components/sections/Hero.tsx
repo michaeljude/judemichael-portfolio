@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowDown, Mail, Sparkles } from "lucide-react";
-import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/BrandIcons";
+import { ArrowDown, Sparkles } from "lucide-react";
 import { profile } from "@/data/profile";
 
 export default function Hero() {
@@ -179,45 +178,13 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          className="flex items-center justify-center gap-4"
-        >
-          {[
-            { icon: GithubIcon, href: profile.social.github, label: "GitHub" },
-            { icon: LinkedinIcon, href: profile.social.linkedin, label: "LinkedIn" },
-            { icon: FacebookIcon, href: profile.social.facebook, label: "Facebook" },
-            { icon: Mail, href: `mailto:${profile.email}`, label: "Email", isLucide: true },
-          ].map(({ icon: Icon, href, label, isLucide }, i) => (
-            <motion.a
-              key={label}
-              href={href}
-              aria-label={label}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 + i * 0.1 }}
-              whileHover={{ y: -3, scale: 1.1 }}
-              className="w-10 h-10 flex items-center justify-center rounded-xl glass border border-white/[0.08] text-slate-400 hover:text-slate-100 hover:border-white/[0.2] transition-all duration-200"
-            >
-              {isLucide ? (
-                <Icon size={18} />
-              ) : (
-                <Icon style={{ width: 18, height: 18 }} />
-              )}
-            </motion.a>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        style={{ opacity }}
         transition={{ delay: 1.3 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-slate-600"
       >
