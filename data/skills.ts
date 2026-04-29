@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  category: "mobile" | "backend" | "tools" | "cloud";
+  category: "mobile" | "backend" | "tools" | "cloud" | "ai";
   proficiency: number; // 1-100
 }
 
@@ -26,14 +26,20 @@ export const skills: Skill[] = [
   { name: "Figma", category: "tools", proficiency: 72 },
   { name: "Code Review", category: "tools", proficiency: 90 },
   { name: "System Design", category: "tools", proficiency: 85 },
-  { name: "Claude", category: "tools", proficiency: 88 },
-  { name: "Cursor", category: "tools", proficiency: 85 },
+  { name: "Cursor", category: "tools", proficiency: 88 },
 
   // Cloud / DevOps
   { name: "CI/CD", category: "cloud", proficiency: 82 },
   { name: "Shorebird", category: "cloud", proficiency: 75 },
   { name: "App Store Deploy", category: "cloud", proficiency: 88 },
   { name: "Hubspot", category: "cloud", proficiency: 70 },
+
+  // AI
+  { name: "Claude", category: "ai", proficiency: 92 },
+  { name: "Gemini", category: "ai", proficiency: 85 },
+  { name: "AI Prompting", category: "ai", proficiency: 90 },
+  { name: "LLM Concepts", category: "ai", proficiency: 85 },
+  { name: "Agentic Workflows", category: "ai", proficiency: 82 },
 ];
 
-export const skillCategories = ["mobile", "backend", "tools", "cloud"] as const;
+export const skillCategories = ["mobile", "backend", "tools", "cloud", "ai"] as const;
