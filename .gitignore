@@ -46,3 +46,4 @@ push-to-github.sh
 
 # Generated docs
 Tech_Stack_Guide.docx
+.env*.local
