@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { MapPin, Mail, Download, Code2, Layers, Zap, Users } from "lucide-react";
 import { profile } from "@/data/profile";
 import { AnimatedSection, StaggerContainer, staggerItem } from "@/components/animations/AnimatedSection";
@@ -13,6 +15,13 @@ const highlights = [
 ];
 
 export default function Profile() {
+  const [showPhoto, setShowPhoto] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => setShowPhoto((prev) => !prev), 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="about" className="section-padding relative">
       {/* Background accent */}
@@ -36,23 +45,50 @@ export default function Profile() {
               {/* Avatar placeholder */}
               <div className="relative w-full max-w-sm mx-auto lg:mx-0">
                 <div className="aspect-square rounded-3xl glass border border-white/[0.08] overflow-hidden relative">
-                  {/* Gradient avatar placeholder */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-indigo-600/10 to-cyan-600/10" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl sm:text-8xl font-bold gradient-text select-none">
-                      {profile.name.split(" ").map((n) => n[0]).join("")}
-                    </div>
-                  </div>
+                  {/* Cycling avatar: initials ↔ photo */}
+                  <AnimatePresence mode="wait">
+                    {showPhoto ? (
+                      <motion.div
+                        key="photo"
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.97 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src="/images/avatar.jpg"
+                          alt={profile.name}
+                          fill
+                          className="object-cover object-top"
+                          priority
+                        />
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key="initials"
+                        initial={{ opacity: 0, scale: 1.05 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.97 }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-indigo-600/10 to-cyan-600/10 flex items-center justify-center"
+                      >
+                        <div className="text-6xl sm:text-8xl font-bold gradient-text select-none">
+                          {profile.name.split(" ").map((n) => n[0]).join("")}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   {/* Decorative corner */}
-                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full border border-violet-500/20 flex items-center justify-center">
+                  <div className="absolute top-4 right-4 w-16 h-16 rounded-full border border-violet-500/20 flex items-center justify-center z-10">
                     <div className="w-10 h-10 rounded-full bg-violet-500/10 flex items-center justify-center">
                       <Code2 size={18} className="text-violet-400" />
                     </div>
                   </div>
 
                   {/* Status badge */}
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-emerald-500/20 text-xs text-emerald-400 font-medium">
+                  <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-emerald-500/20 text-xs text-emerald-400 font-medium z-10">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Open for Commissions & Freelance
                   </div>
@@ -73,7 +109,7 @@ export default function Profile() {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                   className="absolute left-4 sm:-left-4 bottom-16 glass border border-white/[0.1] rounded-2xl px-4 py-3 text-center shadow-xl"
                 >
-                  <div className="text-2xl font-bold gradient-text">50+</div>
+                  <div className="text-2xl font-bold gradient-text">7</div>
                   <div className="text-xs text-slate-500 mt-0.5">Projects</div>
                 </motion.div>
               </div>
