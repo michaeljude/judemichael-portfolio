@@ -11,6 +11,7 @@ const categoryLabels: Record<Skill["category"], string> = {
   backend: "Backend & APIs",
   tools: "Tools",
   cloud: "Cloud & DevOps",
+  ai: "AI & LLMs",
 };
 
 export default function Skills() {
