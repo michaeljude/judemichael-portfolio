@@ -40,3 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 push-to-github.sh
+
+# Claude internal
+.claude/
+
+# Generated docs
+Tech_Stack_Guide.docx
