@@ -58,7 +58,7 @@ export default function Contact() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-100 mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-100 mb-6 leading-tight">
             Let&apos;s build something{" "}
             <span className="gradient-text">remarkable</span>
           </h2>
@@ -73,7 +73,7 @@ export default function Contact() {
             href={`mailto:${profile.email}`}
             whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-lg shadow-[0_0_40px_rgba(139,92,246,0.3)] hover:shadow-[0_0_60px_rgba(139,92,246,0.5)] transition-all duration-300 mb-10"
+            className="inline-flex items-center gap-3 px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white font-bold text-base sm:text-lg shadow-[0_0_40px_rgba(139,92,246,0.3)] hover:shadow-[0_0_60px_rgba(139,92,246,0.5)] transition-all duration-300 mb-10"
           >
             <Mail size={20} />
             Say Hello

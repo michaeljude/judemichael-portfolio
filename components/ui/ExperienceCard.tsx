@@ -43,7 +43,7 @@ export function ExperienceCard({
       {/* Card */}
       <motion.div
         whileHover={{ y: -4, scale: 1.01 }}
-        className="flex-1 mb-8 glass border border-white/[0.06] hover:border-violet-500/20 rounded-2xl p-6 transition-all duration-300"
+        className="flex-1 mb-8 glass border border-white/[0.06] hover:border-violet-500/20 rounded-2xl p-4 sm:p-6 transition-all duration-300"
       >
         <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
           <div>

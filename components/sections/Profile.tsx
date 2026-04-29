@@ -29,7 +29,7 @@ export default function Profile() {
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left: Avatar + stats */}
           <AnimatedSection direction="left">
             <div className="relative">
@@ -39,7 +39,7 @@ export default function Profile() {
                   {/* Gradient avatar placeholder */}
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 via-indigo-600/10 to-cyan-600/10" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-8xl font-bold gradient-text select-none">
+                    <div className="text-6xl sm:text-8xl font-bold gradient-text select-none">
                       {profile.name.split(" ").map((n) => n[0]).join("")}
                     </div>
                   </div>
@@ -54,7 +54,7 @@ export default function Profile() {
                   {/* Status badge */}
                   <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-emerald-500/20 text-xs text-emerald-400 font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Open to Work
+                    Open for Commissions & Freelance
                   </div>
                 </div>
 
@@ -62,7 +62,7 @@ export default function Profile() {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -right-4 top-12 glass border border-white/[0.1] rounded-2xl px-4 py-3 text-center shadow-xl"
+                  className="absolute right-4 sm:-right-4 top-12 glass border border-white/[0.1] rounded-2xl px-4 py-3 text-center shadow-xl"
                 >
                   <div className="text-2xl font-bold gradient-text-violet">7+</div>
                   <div className="text-xs text-slate-500 mt-0.5">Years Exp.</div>
@@ -71,7 +71,7 @@ export default function Profile() {
                 <motion.div
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                  className="absolute -left-4 bottom-16 glass border border-white/[0.1] rounded-2xl px-4 py-3 text-center shadow-xl"
+                  className="absolute left-4 sm:-left-4 bottom-16 glass border border-white/[0.1] rounded-2xl px-4 py-3 text-center shadow-xl"
                 >
                   <div className="text-2xl font-bold gradient-text">50+</div>
                   <div className="text-xs text-slate-500 mt-0.5">Projects</div>
@@ -101,13 +101,13 @@ export default function Profile() {
           <AnimatedSection direction="right" delay={0.15}>
             <div className="space-y-6">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4 leading-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-4 leading-tight">
                   Crafting digital{" "}
                   <span className="gradient-text">experiences</span>
                   <br />
                   that matter
                 </h2>
-                <div className="flex items-center gap-2 text-sm text-slate-500 mb-6">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-slate-500 mb-6">
                   <MapPin size={14} className="text-violet-400" />
                   <span>{profile.location}</span>
                   <span className="text-slate-700">·</span>

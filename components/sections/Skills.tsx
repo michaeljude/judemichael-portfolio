@@ -31,7 +31,7 @@ export default function Skills() {
             <div className="h-px w-8 bg-cyan-500/60" />
             <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase">Skills</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-4">
             My <span className="gradient-text">Toolkit</span>
           </h2>
           <p className="text-slate-500 text-base max-w-xl mb-10">
