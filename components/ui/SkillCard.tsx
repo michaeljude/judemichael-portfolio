@@ -8,6 +8,7 @@ const categoryColors: Record<Skill["category"], string> = {
   backend: "from-cyan-600/20 to-teal-600/20 border-cyan-500/20 hover:border-cyan-500/40",
   tools: "from-amber-600/20 to-orange-600/20 border-amber-500/20 hover:border-amber-500/40",
   cloud: "from-rose-600/20 to-pink-600/20 border-rose-500/20 hover:border-rose-500/40",
+  ai: "from-emerald-600/20 to-green-600/20 border-emerald-500/20 hover:border-emerald-500/40",
 };
 
 const categoryDotColors: Record<Skill["category"], string> = {
@@ -15,6 +16,7 @@ const categoryDotColors: Record<Skill["category"], string> = {
   backend: "bg-cyan-400",
   tools: "bg-amber-400",
   cloud: "bg-rose-400",
+  ai: "bg-emerald-400",
 };
 
 const categoryBarColors: Record<Skill["category"], string> = {
@@ -22,6 +24,7 @@ const categoryBarColors: Record<Skill["category"], string> = {
   backend: "from-cyan-500 to-teal-500",
   tools: "from-amber-500 to-orange-500",
   cloud: "from-rose-500 to-pink-500",
+  ai: "from-emerald-500 to-green-500",
 };
 
 export function SkillCard({ skill, delay = 0 }: { skill: Skill; delay?: number }) {
