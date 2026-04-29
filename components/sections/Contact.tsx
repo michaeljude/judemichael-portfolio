@@ -81,7 +81,7 @@ export default function Contact() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.3}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center gap-3 mt-4">
             {links.map(({ icon: Icon, label, handle, href, color }, i) => (
               <motion.a
                 key={label}
@@ -93,7 +93,7 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 + i * 0.1 }}
                 whileHover={{ y: -3, scale: 1.03 }}
-                className={`flex items-center gap-3 px-5 py-3 rounded-xl glass border border-white/[0.06] text-slate-400 text-sm font-medium transition-all duration-200 group ${color}`}
+                className={`flex items-center justify-center sm:justify-start gap-3 px-5 py-3 rounded-xl glass border border-white/[0.06] text-slate-400 text-sm font-medium transition-all duration-200 group w-full sm:w-auto ${color}`}
               >
                 <Icon style={{ width: 16, height: 16 }} />
                 <span>{handle}</span>
