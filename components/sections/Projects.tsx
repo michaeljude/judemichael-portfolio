@@ -49,7 +49,7 @@ export default function Projects() {
         </AnimatedSection>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
           {/* Large featured card */}
           <div className="md:col-span-7">
             <ProjectCard project={featured[0]} delay={0} />

@@ -18,8 +18,10 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
     >
       {/* Image / gradient placeholder */}
       <div
-        className={`relative overflow-hidden bg-gradient-to-br ${project.gradient} flex-shrink-0 ${
-          project.size === "large" ? "h-40 sm:h-[220px]" : "h-32 sm:h-[160px]"
+        className={`relative overflow-hidden bg-gradient-to-br ${project.gradient} ${
+          project.size === "large"
+            ? "flex-1 min-h-[220px]"
+            : "flex-shrink-0 h-32 sm:h-[160px]"
         }`}
       >
         {project.image ? (
@@ -115,7 +117,7 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-1">
+      <div className={`p-5 flex flex-col ${project.size !== "large" ? "flex-1" : ""}`}>
         <div className="flex items-start justify-between gap-3 mb-2">
           <h3 className="font-bold text-slate-100 text-base group-hover:text-white transition-colors leading-snug">
             {project.title}
