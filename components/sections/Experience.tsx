@@ -20,10 +20,10 @@ export default function Experience() {
               Experience
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-4">
             Career <span className="gradient-text">Timeline</span>
           </h2>
-          <p className="text-slate-500 text-base max-w-lg mb-14">
+          <p className="text-slate-500 text-base max-w-lg mb-8 md:mb-14">
             My professional journey — building products people love.
           </p>
         </AnimatedSection>

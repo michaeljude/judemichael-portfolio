@@ -18,8 +18,9 @@ export function ProjectCard({ project, delay = 0 }: { project: Project; delay?: 
     >
       {/* Image / gradient placeholder */}
       <div
-        className={`relative overflow-hidden bg-gradient-to-br ${project.gradient} flex-shrink-0`}
-        style={{ height: project.size === "large" ? "220px" : "160px" }}
+        className={`relative overflow-hidden bg-gradient-to-br ${project.gradient} flex-shrink-0 ${
+          project.size === "large" ? "h-40 sm:h-[220px]" : "h-32 sm:h-[160px]"
+        }`}
       >
         {project.image ? (
           <Image

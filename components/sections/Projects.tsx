@@ -27,7 +27,7 @@ export default function Projects() {
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-2">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-2">
                 Selected <span className="gradient-text">Work</span>
               </h2>
               <p className="text-slate-500 text-base max-w-lg">
@@ -49,7 +49,7 @@ export default function Projects() {
         </AnimatedSection>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6 items-start">
           {/* Large featured card */}
           <div className="md:col-span-7">
             <ProjectCard project={featured[0]} delay={0} />
@@ -64,7 +64,7 @@ export default function Projects() {
         </div>
 
         {/* Small cards row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-start">
           {others.map((project, i) => (
             <ProjectCard key={project.id} project={project} delay={i * 0.1 + 0.3} />
           ))}

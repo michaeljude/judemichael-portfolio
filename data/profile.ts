@@ -16,8 +16,8 @@ export const profile = {
   },
   stats: [
     { label: "Years Experience", value: "7+" },
-    { label: "Apps Shipped", value: "10+" },
-    { label: "Client Projects", value: "2" },
+    { label: "Apps Shipped", value: "7" },
+    { label: "Freelance Projects", value: "2" },
     { label: "Test Coverage", value: "85%" },
   ],
 };
